@@ -107,13 +107,42 @@ function techList(array, name) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+const countNumber = (array, number) => {
+  return array.reduce((ac, val) => {
+    if (val === number) {
+      ac += 1;
+    }
+    return ac;
+  }, 0);
+};
+
+function generatePhoneNumber(array) {
+  let message;
+  
+  if (array.length > 11) {
+    return "Array com tamanho incorreto.";
+  }
+ 
+  array.forEach((digit) => {
+    if (digit < 0 || digit > 9 || countNumber(array, digit) >= 3) {
+      message = "não é possível gerar um número de telefone com esses valores."
+    }
+  }); 
+
+  return message || array.reduce((ac, val, id) => {
+    switch (id) {
+      case 0: return ac += '(' + val;
+      case 1: return ac += val + ')' + ' ';
+      case 6: return ac += val + '-';
+      default: return ac += val;
+    }
+    return ac;
+  }, '');
 }
 
 // Desafio 12
 function triangleCheck() {
-  // seu código aqui
+  
 }
 
 // Desafio 13
