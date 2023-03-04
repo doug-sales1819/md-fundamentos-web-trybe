@@ -147,11 +147,24 @@ function generatePhoneNumber(array) {
   );
 }
 
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+
 // Desafio 12
-function triangleCheck() {}
+function triangleCheck(lineA, lineB, lineC) {
+  let isTriangle = false;
+
+  if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
+    isTriangle = true;
+  } else if (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) {
+    isTriangle = true;
+  } else if (lineC < lineA + lineB && lineC > Math.abs(lineA - lineB)) {
+    isTriangle = true;
+  }
+  return isTriangle;
+}
 
 // Desafio 13
-const getDigitsInString = (string) => {
+const getDigitsInString = string => {
   return string.match(/\d+/g).map(val => Number(val));
 };
 
