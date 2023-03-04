@@ -60,16 +60,50 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  return string.replace(/[aeiou]/g, vowel => {
+    switch (vowel) {
+      case "a":
+        return 1;
+      case "e":
+        return 2;
+      case "i":
+        return 3;
+      case "o":
+        return 4;
+      case "u":
+        return 5;
+    }
+  });
 }
-function decode() {
-  // seu código aqui
+
+function decode(string) {
+  return string.replace(/[12345]/g, vowel => {
+    switch (vowel) {
+      case "1":
+        return "a";
+      case "2":
+        return "e";
+      case "3":
+        return "i";
+      case "4":
+        return "o";
+      case "5":
+        return "u";
+    }
+  });
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, name) {
+  if (array.length < 1) {
+    return "Vazio!";
+  }
+  return array
+    .map(technology => {
+      return { tech: technology, name: name };
+    })
+    .sort((a, b) => a.tech.localeCompare(b.tech));
 }
 
 // Desafio 11
