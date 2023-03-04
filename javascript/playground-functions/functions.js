@@ -1,6 +1,6 @@
 // Desafio 1
 function compareTrue(param1, param2) {
-    return param1 && param2 ? true : false;
+  return param1 && param2 ? true : false;
 }
 
 // Desafio 2
@@ -13,20 +13,24 @@ function splitSentence(phrase) {
   return phrase && typeof phrase === 'string' ? phrase.split(' ') : undefined;
 }
 
-console.log(splitSentence());
 // Desafio 4
-function concatName() {
-  
+function concatName(array) {
+  return `${array.slice(-1)}, ${array.slice(0, 1)}`;
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  return (wins * 3) + ties;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(array) {
+  return array.reduce((ac, val) => {
+    if (val === Math.max(...array)) {
+      ac += 1;
+    }
+    return ac;
+  }, 0)
 }
 
 // Desafio 7
